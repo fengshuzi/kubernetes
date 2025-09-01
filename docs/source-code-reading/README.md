@@ -5,6 +5,7 @@
 ## 📚 文档目录
 
 ### 🎯 核心指导文档
+- [⚡ **快速开始 - 资深开发者版**](./quick-start-for-experts.md) - **10年Java老兵30天成为K8s专家**
 - [📋 文档结构说明](./documentation-structure.md) - 完整的文档组织和使用指南
 - [🏗️ 项目结构分析](./project-structure.md) - Kubernetes 项目整体结构分析
 - [🛠️ 技术栈详解](./tech-stack.md) - 使用的框架和技术栈详细说明  
