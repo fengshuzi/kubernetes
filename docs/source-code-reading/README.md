@@ -19,6 +19,11 @@
 - [代码示例](./examples/) - 实用的代码示例和最佳实践
 - [学习笔记](./notes/) - 个人学习记录和问题解答
 
+### 🤖 AI学习助手
+- [AI提问模板](./ai-prompt-templates.md) - 向AI高效提问的模板集合
+- [提问示例](./examples/ai-question-examples.md) - 实际问题示例和技巧
+- [⚡ 快速参考卡](./ai-prompt-cheatsheet.md) - 常用提问模板，复制即用
+
 ## 🎯 快速开始
 
 如果你是第一次阅读 Kubernetes 源码，建议按以下顺序进行：
