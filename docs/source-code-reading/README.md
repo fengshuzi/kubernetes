@@ -1,59 +1,114 @@
 # Kubernetes 源码阅读指南
 
-这个文件夹包含了学习和阅读 Kubernetes 源码的相关文档和资料。
+## 📚 文档导航
 
-## 📚 文档目录
+欢迎来到 Kubernetes 源码分析文档！这里提供了系统性的源码阅读指南和详细的技术分析。
 
-### 🎯 核心指导文档
-- [⚡ **快速开始 - 资深开发者版**](./quick-start-for-experts.md) - **10年Java老兵30天成为K8s专家**
-- [📋 文档结构说明](./documentation-structure.md) - 完整的文档组织和使用指南
-- [🏗️ 项目结构分析](./project-structure.md) - Kubernetes 项目整体结构分析
-- [🛠️ 技术栈详解](./tech-stack.md) - 使用的框架和技术栈详细说明  
-- [🎯 核心概念](./core-concepts.md) - Kubernetes 核心概念和设计理念
-- [📚 学习路径](./learning-path.md) - 系统化的源码学习路径
-- [🔧 开发环境](./dev-setup.md) - 开发和调试环境搭建
+## 🗂️ 文档结构
 
-### 🧩 深入学习资料
-- [组件分析](./components/) - 各个组件的详细分析
-- [代码导读](./code-walkthrough/) - 重要代码片段的解读
-- [代码示例](./examples/) - 实用的代码示例和最佳实践
-- [学习笔记](./notes/) - 个人学习记录和问题解答
+### 📖 源码阅读指南
+- [project-structure.md](./project-structure.md) - 项目结构分析
+- [components/README.md](./components/README.md) - 组件分析总览
 
-### 🤖 AI学习助手
-- [AI提问模板](./ai-prompt-templates.md) - 向AI高效提问的模板集合
-- [提问示例](./examples/ai-question-examples.md) - 实际问题示例和技巧
-- [⚡ 快速参考卡](./ai-prompt-cheatsheet.md) - 常用提问模板，复制即用
+### 🔧 HTTP 框架分析
+- [http-framework/README.md](./http-framework/README.md) - HTTP 框架分析总览
+- [http-framework/kube-apiserver-http-framework.md](./http-framework/kube-apiserver-http-framework.md) - API Server HTTP 框架详解
 
-## 🎯 快速开始
+### 🏗️ 组件分析
+- [components/kube-apiserver.md](./components/kube-apiserver.md) - API Server 详细分析
+- [components/kube-controller-manager.md](./components/kube-controller-manager.md) - 控制器管理器分析
+- [components/kube-scheduler.md](./components/kube-scheduler.md) - 调度器源码分析
+- [components/kubelet.md](./components/kubelet.md) - Kubelet 节点代理分析
+- [components/kube-proxy.md](./components/kube-proxy.md) - 网络代理组件分析
 
-如果你是第一次阅读 Kubernetes 源码，建议按以下顺序进行：
+## 🎯 学习路径
 
-1. **了解文档组织** - 阅读 [📋 文档结构说明](./documentation-structure.md)
-2. **掌握整体架构** - 学习 [🏗️ 项目结构分析](./project-structure.md) 和 [🎯 核心概念](./core-concepts.md)
-3. **了解技术基础** - 深入 [🛠️ 技术栈详解](./tech-stack.md) 
-4. **制定学习计划** - 参考 [📚 学习路径](./learning-path.md) 制定个人计划
-5. **搭建开发环境** - 按照 [🔧 开发环境](./dev-setup.md) 搭建实践环境
-6. **开始实践学习** - 从 [代码示例](./examples/) 开始，配合 [代码导读](./code-walkthrough/)
-7. **深入组件分析** - 系统学习 [组件分析](./components/) 中的各个模块
-8. **记录学习过程** - 在 [学习笔记](./notes/) 中记录心得和问题
+### 初学者路径
+1. **项目结构** - 了解整体代码组织
+2. **HTTP 框架** - 理解 API Server 的请求处理机制
+3. **API Server** - 掌握核心 API 服务器
+4. **kubectl** - 学习客户端交互
 
-## 📝 学习笔记
+### 进阶路径
+1. **调度器** - 深入调度算法
+2. **控制器** - 掌握控制器模式
+3. **网络代理** - 理解网络实现
+4. **节点管理** - 学习 Kubelet 机制
 
-你可以在这个文件夹中添加自己的学习笔记：
+### 专家路径
+1. **性能优化** - 分析性能瓶颈
+2. **安全机制** - 深入认证授权
+3. **存储系统** - 理解数据持久化
+4. **扩展开发** - 学习插件机制
 
-- `notes/` - 个人学习笔记
-- `examples/` - 代码示例和实验
-- `questions/` - 学习过程中的问题和解答
+## 🔍 快速导航
 
-## 🤝 贡献指南
+### 按技术栈分类
+- **HTTP 框架**: Go-Restful + 标准库
+- **存储系统**: etcd + 自定义存储
+- **网络**: CNI + kube-proxy
+- **调度**: 多级调度算法
+- **安全**: RBAC + 准入控制
 
-欢迎补充和完善这些文档！请遵循以下格式：
+### 按功能模块分类
+- **API 层**: RESTful API 设计
+- **控制层**: 控制器模式实现
+- **数据层**: 资源存储和管理
+- **网络层**: 服务发现和负载均衡
+- **安全层**: 认证授权机制
 
+## 📊 技术栈概览
+
+| 组件 | 主要技术 | 关键特性 |
+|------|----------|----------|
+| **API Server** | Go-Restful + HTTP/2 | RESTful API、自动路由 |
+| **Scheduler** | 多级调度算法 | 资源感知、亲和性 |
+| **Controller** | 控制器模式 | 声明式管理、事件驱动 |
+| **Kubelet** | CRI 接口 | 容器生命周期管理 |
+| **Proxy** | iptables/ipvs | 服务发现、负载均衡 |
+
+## 🛠️ 开发工具
+
+### 代码分析工具
+```bash
+# 查找函数定义
+grep -r "func FunctionName" pkg/
+
+# 查找接口实现
+grep -r "type.*Interface" pkg/
+
+# 查看调用关系
+go list -f '{{.ImportPath}} {{.Imports}}' ./...
+```
+
+### 调试技巧
+```bash
+# 启用详细日志
+export KUBE_LOG_LEVEL=5
+
+# 查看 API 请求
+kubectl get pods -v=8
+
+# 分析性能
+go tool pprof http://localhost:8080/debug/pprof/profile
+```
+
+## 📝 贡献指南
+
+欢迎为文档贡献内容！
+
+### 文档规范
 - 使用中文撰写
-- 保持文档结构清晰
-- 添加必要的代码示例
-- 包含相关的引用链接
+- 保持结构清晰
+- 添加代码示例
+- 包含架构图表
+
+### 内容要求
+- **准确性**: 确保代码分析正确
+- **完整性**: 覆盖主要功能模块
+- **实用性**: 提供实际的学习价值
+- **时效性**: 基于最新版本分析
 
 ---
 
-*最后更新时间：$(date)*
+*开始您的 Kubernetes 源码学习之旅！通过系统性的阅读和分析，您将深入理解这个强大的容器编排平台。*

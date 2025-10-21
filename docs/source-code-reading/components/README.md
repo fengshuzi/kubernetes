@@ -6,6 +6,7 @@
 
 ### 控制平面组件
 - [kube-apiserver.md](./kube-apiserver.md) - API 服务器详细分析
+- [kube-apiserver-http-framework.md](../http-framework/kube-apiserver-http-framework.md) - API Server HTTP 框架详解
 - [kube-controller-manager.md](./kube-controller-manager.md) - 控制器管理器分析
 - [kube-scheduler.md](./kube-scheduler.md) - 调度器源码分析
 - [etcd.md](./etcd.md) - etcd 存储系统分析
